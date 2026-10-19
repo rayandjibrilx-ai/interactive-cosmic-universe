@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#030611">
+  <meta name="description" content="Explore the solar system in an interactive 3D universe.">
+  <title>DJIDRA COSMOS | 3D Solar System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loading-screen">
+    <div class="loader"></div>
+    <h2>DJIDRA COSMOS</h2>
+    <p>INITIALIZING SOLAR SYSTEM...</p>
+  </div>
+
+  <canvas id="universe" aria-label="Interactive 3D solar system"></canvas>
+
+  <header class="topbar">
+    <a class="brand" href="./">DJIDRA<span> COSMOS</span></a>
+    <div class="live-status">
+      <span class="status-dot"></span>
+      SOLAR SYSTEM ONLINE
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">YOUR UNIVERSE. YOUR EXPLORATION.</p>
+      <h1>BEYOND<br><span>THE KNOWN.</span></h1>
+      <p class="intro-text">
+        Travel through our solar system. Select a planet,
+        discover its secrets, and explore space in 3D.
+      </p>
+      <button id="explore-button" type="button">EXPLORE UNIVERSE ↗</button>
+    </section>
+
+    <section id="planet-panel" class="planet-panel" aria-live="polite">
+      <button id="close-panel" class="close-panel" type="button"
+        aria-label="Close planet information">×</button>
+      <p class="eyebrow">CELESTIAL DATABASE</p>
+      <p id="planet-number" class="planet-number">01 / 08</p>
+      <h2 id="planet-name">EARTH</h2>
+      <p id="planet-description">
+        Our home planet, a world of oceans, continents, and life.
+      </p>
+      <div class="planet-stats">
+        <div>
+          <span>TYPE</span>
+          <strong id="planet-type">Terrestrial</strong>
+        </div>
+        <div>
+          <span>DAY LENGTH</span>
+          <strong id="planet-day">24 hours</strong>
+        </div>
+        <div>
+          <span>MOONS</span>
+          <strong id="planet-moons">1</strong>
+        </div>
+      </div>
+      <button id="focus-button" type="button">FOCUS ON PLANET ↗</button>
+    </section>
+  </main>
+
+  <nav class="planet-nav" aria-label="Choose a planet">
+    <button data-planet="0" type="button">MERCURY</button>
+    <button data-planet="1" type="button">VENUS</button>
+    <button data-planet="2" type="button" class="active">EARTH</button>
+    <button data-planet="3" type="button">MARS</button>
+    <button data-planet="4" type="button">JUPITER</button>
+    <button data-planet="5" type="button">SATURN</button>
+    <button data-planet="6" type="button">URANUS</button>
+    <button data-planet="7" type="button">NEPTUNE</button>
+  </nav>
+
+  <div class="control-hint">
+    <span>DRAG</span> ROTATE
+    <span>SCROLL</span> ZOOM
+    <span>CLICK</span> SELECT
+  </div>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
+      }
+    }
+  </script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
